@@ -1,0 +1,3 @@
+
+class Entry(object):
+   pass

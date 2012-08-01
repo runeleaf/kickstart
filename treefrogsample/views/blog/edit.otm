@@ -1,0 +1,21 @@
+#include "blog.h"
+
+#head_title ~= controller()->name() + ": " + controller()->activeAction()
+
+#init : tfetch(Blog, blog);
+
+#error_msg ~=$ error
+
+#notice_msg ~=$ notice
+
+#edit_form |== formTag(urla("save", blog.id()))
+
+#id |== inputTextTag("blog[id]", blog.id());
+
+#title |== inputTextTag("blog[title]", blog.title());
+
+#body |== inputTextTag("blog[body]", blog.body());
+
+#linkToShow :== linkTo("Show", urla("show", blog.id()))
+
+#linkToIndex :== linkTo("Back", urla("index"))

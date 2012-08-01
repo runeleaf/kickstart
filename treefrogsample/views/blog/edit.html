@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title data-tf="#head_title"></title>
+</head>
+<body>
+<p style="color: red" data-tf="#error_msg"></p>
+<p style="color: green" data-tf="#notice_msg"></p>
+
+<h1>Editing Blog</h1>
+
+<form method="post" data-tf="#edit_form">
+  <p>
+    <label for="blog_id">ID</label><br />
+    <input id="blog_id" readonly data-tf="#id" />
+  </p>
+  <p>
+    <label for="blog_title">Title</label><br />
+    <input id="blog_title" data-tf="#title" />
+  </p>
+  <p>
+    <label for="blog_body">Body</label><br />
+    <input id="blog_body" data-tf="#body" />
+  </p>
+  <p>
+    <input type="submit" value="Update" />
+  </p>
+</form>
+
+<a data-tf="#linkToShow">Show</a> |
+<a data-tf="#linkToIndex">Back</a>
+
+</body>
+</html>

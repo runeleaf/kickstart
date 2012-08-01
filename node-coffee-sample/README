@@ -1,0 +1,12 @@
+express -c sass node-coffee-sample
+js2coffee app.js > default.coffee
+
+npm install
+
+自動コンパイル
+coffee -wc app.coffee 
+
+実行
+coffee app.coffee
+node app.js
+

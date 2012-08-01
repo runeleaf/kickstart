@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js'></script>
+    <script>
+      //$(document).ready(function(){
+        function debug(str){
+          $("#debug").append("<p style='color:red;'>"+str+"</p>");
+        };
+
+        if (typeof WebSocket == 'undefined' ) {
+          if (typeof MozWebSocket != 'undefined' ) {
+            WebSocket = MozWebSocket;
+          }
+        }
+        ws = new WebSocket("ws://192.168.1.26:3030/websocket");
+        ws.onmessage = function(evt) {
+          $("#msg").append("<p>"+decodeURI(evt.data)+"</p>");
+           window.scrollBy(0, screen.height);
+        };
+        ws.onclose = function() {
+          debug("ソケット切断");
+        };
+        ws.onopen = function() {
+          debug("接続中");
+          ws.send("hellow server");
+        };
+
+        function sendMessage(){
+          ws.send(encodeURI("テストボタンおした"));
+          debug("送信");
+        }
+      //});
+    </script>
+  </head>
+  <body>
+    <div>
+      <input type="button" value="send" onclick="sendMessage();">
+    </div>
+    <div id="debug"></div>
+    <div id="msg"></div>
+  </body>
+</html>
+

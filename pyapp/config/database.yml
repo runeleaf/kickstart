@@ -1,0 +1,18 @@
+development:
+  adapter: mysql
+  database: testapp
+  user: testapp
+  password: pass
+  host: localhost
+  encoding: utf-8
+  socket:
+
+production:
+  adapter: mysql
+  database: testapp
+  user: testapp
+  password: pass
+  host: localhost
+  encoding: utf-8
+  socket:
+

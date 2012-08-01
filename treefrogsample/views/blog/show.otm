@@ -1,0 +1,25 @@
+#include "blog.h"
+
+#head_title ~= controller()->name() + ": " + controller()->activeAction()
+
+#init : tfetch(Blog, blog);
+
+#error_msg ~=$ error
+
+#notice_msg ~=$ notice
+
+#id := blog.id()
+
+#title := blog.title()
+
+#body := blog.body()
+
+#createdAt := blog.createdAt()
+
+#updatedAt := blog.updatedAt()
+
+#lockRevision := blog.lockRevision()
+
+#linkToEdit :== linkTo("Edit", urla("edit", blog.id()))
+
+#linkToIndex :== linkTo("Back", urla("index"))

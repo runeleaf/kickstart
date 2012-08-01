@@ -1,0 +1,32 @@
+.
+├── README
+├── application.py
+├── bin
+├── config
+│   ├── __init__.py
+│   ├── database.yml
+│   ├── environment.py
+│   ├── routes.py
+├── handler
+│   ├── __init__.py
+│   ├── base.py
+│   ├── dashboard.py
+├── lib
+│   └── __init__.py
+├── model
+│   └── __init__.py
+├── service
+│   └── __init__.py
+├── static
+│   ├── css
+│   │   ├── main.css
+│   │   └── scaffold.css
+│   └── favicon.ico
+└── views
+    ├── base.html
+    └── dashboard.html
+
+# test1
+# test2
+# test3
+# test4

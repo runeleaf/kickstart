@@ -1,0 +1,24 @@
+#include "blog.h"
+
+#head_title ~= controller()->name() + ": " + controller()->activeAction()
+
+#for :
+tfetch(QList<Blog>, blogList);
+for (QListIterator<Blog> it(blogList); it.hasNext(); ) {
+    const Blog &i = it.next();
+    %%
+}
+
+#id ~= i.id()
+
+#title ~= i.title()
+
+#body ~= i.body()
+
+#linkToShow :== linkTo("Show", urla("show", i.id()))
+
+#linkToEdit :== linkTo("Edit", urla("edit", i.id()))
+
+#linkToRemove :== linkTo("Remove", urla("remove", i.id()), Tf::Post, "confirm('Are you sure?')")
+
+#linkToEntry :== linkTo("New entry", urla("entry"))
