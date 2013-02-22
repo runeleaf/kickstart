@@ -1,0 +1,22 @@
+<h1>Listing statuses</h1>
+
+<%= will_paginate @statuses %>
+
+<table>
+  <% @statuses.each do |status| %>
+    <% klass = cycle('cycle_a', 'cycle_b') %>
+    <tr class="<%= klass %>">
+    <td rowspan='3'><%= image_tag(status.via) if status.via %></td>
+  </tr>
+  <tr class="<%= klass %>">
+    <td colspan='2'><%= link_to status.screen_name, "http://twitter.com/#{status.screen_name}", :target => :blank %>: <%= status.entry %></td>
+  </tr>
+  <tr class="<%= klass %>">
+    <td><%= raw(status.source) %></td>
+    <td><%= link_to status.published_at.to_s, "http://twitter.com/#!/#{status.screen_name}/status/#{status.status_id}", :target => :blank %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= will_paginate @statuses %>
+

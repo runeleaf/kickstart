@@ -1,0 +1,29 @@
+
+#wrapper {
+  text-align: center;
+}
+#contents {
+  width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table {
+}
+
+.cycle_a {
+	background-color: #ccccff;
+}
+
+.cycle_b {
+	background-color: #ffffff;
+}
+
+.profile {
+  width: 50px;
+}
+
+.entry {
+  width: 80%;
+}
+
